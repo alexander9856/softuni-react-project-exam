@@ -22,8 +22,6 @@ function App() {
         <Route path='/create' element={<Create />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/details/:gameId' element={<Details />} />
-
-
       </Routes>
       <main>
 
