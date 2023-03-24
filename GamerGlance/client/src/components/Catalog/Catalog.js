@@ -1,7 +1,7 @@
 import './Catalog.css'
 import { useState, useEffect } from 'react'
 
-import { getAllGames } from '../../services/gameService'
+import { getAllGames } from '../../services/data'
 import { CatalogItem } from './CatalogItem'
 import { EmptyCatalog } from './EmptyCatalog'
 

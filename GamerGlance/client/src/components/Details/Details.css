@@ -14,6 +14,9 @@
     margin-top: 8rem;
   }
   
+  .game-properties{
+    margin-left: 2rem;
+  }
   .game-title,
   .game-type {
     margin: 0;
@@ -84,6 +87,6 @@
     color: #fff;
   }
   
-  .edit-button:hover, .delete-button:hover {
+  .edit-button:hover, .delete-button:hover,.buy-button:hover {
     opacity: 0.8;
   }

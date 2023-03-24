@@ -1,14 +1,31 @@
 import './Details.css'
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { getGamebyId } from '../../services/data'
+
 export const Details = () => {
+    // const navigate = useNavigate();
+    const { gameId } = useParams();
+    // console.log(gameId)
+    // const user = useContext(UserContext);
+
+    const [game, setGame] = useState({});
+    console.log(game)
+    useEffect(() => {
+        getGamebyId(gameId)
+            .then(res => {
+                setGame(res)
+            })
+    }, [gameId]);
     return (
         <section id="details-page">
-            <img src={require('../../assets/474082691.electronic-arts-ufc-3-xbox-one.jpg')} alt="Game Image" class="game-image" />
+            <img src={game['game-imageUrl']} />
             <div className="game-properties">
-                <h2 className="game-title">Ufc 3</h2>
-                <p className="game-type">Type of game: Fighting</p>
-                <p className="game-suitable">Suitable for: Xbox One</p>
-                <p className="game-price">Price: 50$</p>
-                <p className="game-description">Description: nai qkata igra bate naprao konara im pruska lesha</p>
+                <h2 className="game-title">{game['game-title']}</h2>
+                <p className="game-type">Type of game: {game['game-type']}</p>
+                <p className="game-suitable">Suitable for: {game['game-suitable']}</p>
+                <p className="game-price">Price: {game['game-price']}$</p>
+                <p className="game-description">Description: {game['game-description']}</p>
                 <div className="button-container">
                     {/* <!-- user and owner --> */}
                     <button className="edit-button">Edit</button>
