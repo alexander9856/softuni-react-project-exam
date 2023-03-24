@@ -4,7 +4,7 @@ export const Profile = () => {
     return (
         <section id="profile">
             <div className="avatar">
-            <img src={require('../../images/removedbg.png')} alt="Avatar"/>
+            <img src={require('../../assets/removedbg.png')} alt="Avatar"/>
             </div>
             <div className="profile-info">
                 <h1 className="seller">John Doe</h1>

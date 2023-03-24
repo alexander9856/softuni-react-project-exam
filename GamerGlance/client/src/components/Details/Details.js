@@ -2,7 +2,7 @@ import './Details.css'
 export const Details = () => {
     return (
         <section id="details-page">
-            <img src={require('../../images/474082691.electronic-arts-ufc-3-xbox-one.jpg')} alt="Game Image" class="game-image" />
+            <img src={require('../../assets/474082691.electronic-arts-ufc-3-xbox-one.jpg')} alt="Game Image" class="game-image" />
             <div className="game-properties">
                 <h2 className="game-title">Ufc 3</h2>
                 <p className="game-type">Type of game: Fighting</p>

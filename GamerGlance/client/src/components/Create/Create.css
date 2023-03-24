@@ -36,10 +36,10 @@
 
 #game-title,
 #game-price,
-#game-category,
+#game-type,
 #game-imageUrl,
 #game-description,
-#game-suitable-for {
+#game-suitable {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -47,7 +47,7 @@
     margin-top: 10px;
 }
 
-#game-suitable-for {
+#game-suitable {
     margin-bottom: 10px;
 }
 
