@@ -7,7 +7,7 @@ let endpoints = {
     'create': 'jsonstore/games',
     'getAllItems': 'jsonstore/games',
     'getGameById': 'jsonstore/games/',
-    
+
 }
 export async function login(email, password) {
     let user = await api.post(endpoints.login, { email, password })
@@ -19,7 +19,7 @@ export async function register(email, password) {
 
 }
 
-export async function getMyGames(){
+export async function getMyGames() {
     let user = JSON.parse(sessionStorage.getItem('user'));
     let userId = user && user._id;
     let data = await api.get(`data/posts?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`)
@@ -50,40 +50,42 @@ export async function updateGame(id, data) {
 }
 
 export async function delGame(id) {
-    let user = JSON.parse(sessionStorage.getItem('user'));
-    if(user){
-        await api.del(endpoints.getElementById + id)
-    }
+    // let user = JSON.parse(sessionStorage.getItem('user'));
+    await api.del(endpoints.getGameById + id)
+    // if(user){
+    // await api.del(endpoints.getElementById + id)
+
+    // }
 
 }
 
 
-export async function buy(gameId){
-    let res = await api.post('data/donation',gameId)
+export async function buy(gameId) {
+    let res = await api.post('data/donation', gameId)
     return res
-} 
+}
 
-export async function getComments(gameId){
+export async function getComments(gameId) {
     let res = await api.get(`data/donation?where=petId%3D%22${gameId}%22&distinct=_ownerId&count`)
     return res
 }
 
-export async function getGamesFromCurrentUser(petId){
+export async function getGamesFromCurrentUser(petId) {
     let user = JSON.parse(sessionStorage.getItem('user'));
     let userId = user && user._id;
     let res = await api.get(`data/donation?where=petId%3D%22${petId}%22%20and%20_ownerId%3D%22${userId}%22&count`)
     return res
 }
 
-export async function getLatestGames(){
+export async function getLatestGames() {
     let res = await api.get(`data/games?sortBy=_createdOn%20desc&distinct=category`)
     return res
 }
 
-export async function getAllComents(id){
+export async function getAllComents(id) {
     let res = await api.get(`data/comments?where=gameId%3D%22${id}%22`)
     return res
 }
-export async function createComment(gameId,comment){
-    let res = await api.post(`data/comments`,{gameId,comment})
+export async function createComment(gameId, comment) {
+    let res = await api.post(`data/comments`, { gameId, comment })
 }

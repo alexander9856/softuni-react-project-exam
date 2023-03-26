@@ -2,13 +2,14 @@ import './Details.css'
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { getGamebyId } from '../../services/data';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+import { delGame } from '../../services/data'
+
 
 export const Details = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const { gameId } = useParams();
-    // console.log(gameId)
-    // const user = useContext(UserContext);
 
     const [game, setGame] = useState({});
     useEffect(() => {
@@ -17,6 +18,17 @@ export const Details = () => {
                 setGame(res)
             })
     }, [gameId]);
+
+    const deleteHandler = async (e) => {
+        try {
+            await delGame(gameId)
+            navigate('/catalog')
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
     return (
         <section id="details-page">
             <img src={game['game-imageUrl']} />
@@ -29,7 +41,7 @@ export const Details = () => {
                 <div className="button-container">
                     {/* <!-- user and owner --> */}
                     <Link to={`/games/edit/${gameId}`} className="edit-button">Edit</Link>
-                    <button className="delete-button">Delete</button>
+                    <button onClick={deleteHandler} className="delete-button" >Delete</button>
                     {/* <!-- user and not owner --> */}
                     <button className="buy-button">Buy</button>
                 </div>
