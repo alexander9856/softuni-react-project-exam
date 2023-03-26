@@ -24,7 +24,7 @@ export const Details = () => {
             await delGame(gameId)
             navigate('/catalog')
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
     }
