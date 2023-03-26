@@ -21,8 +21,11 @@ export const Details = () => {
 
     const deleteHandler = async (e) => {
         try {
-            await delGame(gameId)
-            navigate('/catalog')
+            const confirmation = window.confirm('Are you sure you want to delete this game from sales?');
+            if (confirmation) {
+                await delGame(gameId)
+                navigate('/catalog')
+            }
         }
         catch (err) {
             console.log(err)
