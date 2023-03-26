@@ -1,7 +1,8 @@
 import './Details.css'
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
-import { getGamebyId } from '../../services/data'
+import { getGamebyId } from '../../services/data';
+import {Link} from 'react-router-dom'
 
 export const Details = () => {
     // const navigate = useNavigate();
@@ -10,7 +11,6 @@ export const Details = () => {
     // const user = useContext(UserContext);
 
     const [game, setGame] = useState({});
-    console.log(game)
     useEffect(() => {
         getGamebyId(gameId)
             .then(res => {
@@ -28,7 +28,7 @@ export const Details = () => {
                 <p className="game-description">Description: {game['game-description']}</p>
                 <div className="button-container">
                     {/* <!-- user and owner --> */}
-                    <button className="edit-button">Edit</button>
+                    <Link to={`/games/edit/${gameId}`} className="edit-button">Edit</Link>
                     <button className="delete-button">Delete</button>
                     {/* <!-- user and not owner --> */}
                     <button className="buy-button">Buy</button>

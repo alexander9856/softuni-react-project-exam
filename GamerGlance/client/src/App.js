@@ -9,6 +9,7 @@ import { Catalog } from './components/Catalog/Catalog';
 import { Create } from './components/Create/Create';
 import { Profile } from './components/Profile/Profile';
 import { Details } from './components/Details/Details';
+import { Edit } from './components/Edit/Edit';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path='/create' element={<Create />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/games/details/:gameId' element={<Details />} />
+        <Route path='/games/edit/:gameId' element={<Edit />} />
+
       </Routes>
       <main>
 

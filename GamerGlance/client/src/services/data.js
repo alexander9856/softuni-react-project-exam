@@ -45,11 +45,11 @@ export async function getGamebyId(id) {
 }
 
 export async function updateGame(id, data) {
-    let res = await api.put(endpoints.getElementById + id, data)
+    let res = await api.put(endpoints.getGameById + id, data)
     return res
 }
 
-export async function delPost(id) {
+export async function delGame(id) {
     let user = JSON.parse(sessionStorage.getItem('user'));
     if(user){
         await api.del(endpoints.getElementById + id)
@@ -57,22 +57,18 @@ export async function delPost(id) {
 
 }
 
-export async function getModel(brand) {
-    let res = await api.get(`data/shoes?where=brand%20LIKE%20%22${brand}%22`);
-    return res
-}
 
-export async function donate(petId){
-    let res = await api.post('data/donation',petId)
+export async function buy(gameId){
+    let res = await api.post('data/donation',gameId)
     return res
 } 
 
-export async function getDonations(petId){
-    let res = await api.get(`data/donation?where=petId%3D%22${petId}%22&distinct=_ownerId&count`)
+export async function getComments(gameId){
+    let res = await api.get(`data/donation?where=petId%3D%22${gameId}%22&distinct=_ownerId&count`)
     return res
 }
 
-export async function getDonationsFromCurrentUser(petId){
+export async function getGamesFromCurrentUser(petId){
     let user = JSON.parse(sessionStorage.getItem('user'));
     let userId = user && user._id;
     let res = await api.get(`data/donation?where=petId%3D%22${petId}%22%20and%20_ownerId%3D%22${userId}%22&count`)
