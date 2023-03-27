@@ -1,0 +1,71 @@
+.modifyGame {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: -55px;
+}
+
+.createEditGame {
+    /* margin-left: 40rem; */
+    margin-top: 4.5rem;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    background-image: linear-gradient(to right, #8360c3, #2ebf91);
+
+}
+
+.game-form-group {
+    padding: 10px 0px;
+}
+
+.modifyGame .game-form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin: 0px 0px 5px 0px;
+    color: white;
+}
+
+.createEditGame img {
+    width: 50%;
+}
+
+#game-title,
+#game-price,
+#game-type,
+#game-imageUrl,
+#game-description,
+#game-suitable {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#game-suitable {
+    margin-bottom: 10px;
+}
+
+#game-price {
+    margin-bottom: 10px;
+
+}
+
+.submitGame {
+    padding: 10px;
+    background-color: #07213d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submitGame:hover {
+    background-color: #94b1d1;
+}
