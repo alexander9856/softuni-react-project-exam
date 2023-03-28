@@ -1,9 +1,9 @@
 import './Login.css'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthContext'
+import { AuthContext } from '../../../contexts/AuthContext'
 
-import { useForm } from '../../hooks/useForm'
+import { useForm } from '../../../hooks/useForm'
 
 export const Login = () => {
     const { onLoginSubmit } = useContext(AuthContext)

@@ -15,18 +15,18 @@ export async function login(data) {
     return user
 
 }
-export async function register(email, password) {
-    let user = await api.post(endpoints.register, { email, password })
+export async function register(data) {
+    let user = await api.post(endpoints.register, data)
     localStorage.setItem('user', JSON.stringify(user))
-
+    return user
 }
 
-export async function getMyGames() {
-    let user = JSON.parse(localStorage.getItem('user'));
-    let userId = user && user._id;
-    let data = await api.get(`data/posts?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`)
-    return data
-}
+// export async function getMyGames() {
+//     let user = JSON.parse(localStorage.getItem('user'));
+//     let userId = user && user._id;
+//     let data = await api.get(`data/posts?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`)
+//     return data
+// }
 export async function logout() {
     await api.get(endpoints.logout)
     localStorage.removeItem('user')
@@ -67,27 +67,10 @@ export async function buy(gameId) {
     return res
 }
 
-export async function getComments(gameId) {
-    let res = await api.get(`data/donation?where=petId%3D%22${gameId}%22&distinct=_ownerId&count`)
-    return res
-}
 
-export async function getGamesFromCurrentUser(petId) {
-    let user = JSON.parse(localStorage.getItem('user'));
-    let userId = user && user._id;
-    let res = await api.get(`data/donation?where=petId%3D%22${petId}%22%20and%20_ownerId%3D%22${userId}%22&count`)
-    return res
-}
 
-export async function getLatestGames() {
-    let res = await api.get(`data/games?sortBy=_createdOn%20desc&distinct=category`)
-    return res
-}
 
-export async function getAllComents(id) {
-    let res = await api.get(`data/comments?where=gameId%3D%22${id}%22`)
-    return res
-}
-export async function createComment(gameId, comment) {
-    let res = await api.post(`data/comments`, { gameId, comment })
-}
+
+
+
+

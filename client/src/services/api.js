@@ -1,6 +1,6 @@
 const host = "http://localhost:3030/";
 async function request(method, url, data) {
-    let user = JSON.parse(sessionStorage.getItem('user'));
+    let user = JSON.parse(localStorage.getItem('user'));
     let option = {
         method,
         headers: {}
@@ -18,7 +18,7 @@ async function request(method, url, data) {
         let res = await fetch(host + url, option);
         if (!res.ok) {
             if (res.status === 403) {
-                sessionStorage.removeItem('user')
+                localStorage.removeItem('user')
             }
             const err = await res.json();
             throw new Error(err.message)
