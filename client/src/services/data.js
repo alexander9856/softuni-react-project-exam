@@ -9,25 +9,27 @@ let endpoints = {
     'getGameById': 'jsonstore/games/',
 
 }
-export async function login(email, password) {
-    let user = await api.post(endpoints.login, { email, password })
-    sessionStorage.setItem('user', JSON.stringify(user))
+export async function login(data) {
+    let user = await api.post(endpoints.login, data)
+    localStorage.setItem('user', JSON.stringify(user))
+    return user
+
 }
 export async function register(email, password) {
     let user = await api.post(endpoints.register, { email, password })
-    sessionStorage.setItem('user', JSON.stringify(user))
+    localStorage.setItem('user', JSON.stringify(user))
 
 }
 
 export async function getMyGames() {
-    let user = JSON.parse(sessionStorage.getItem('user'));
+    let user = JSON.parse(localStorage.getItem('user'));
     let userId = user && user._id;
     let data = await api.get(`data/posts?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`)
     return data
 }
 export async function logout() {
     await api.get(endpoints.logout)
-    sessionStorage.removeItem('user')
+    localStorage.removeItem('user')
 }
 export async function createGame(data) {
     let res = await api.post(endpoints.create, data)
@@ -50,7 +52,7 @@ export async function updateGame(id, data) {
 }
 
 export async function delGame(id) {
-    // let user = JSON.parse(sessionStorage.getItem('user'));
+    // let user = JSON.parse(localStorage.getItem('user'));
     await api.del(endpoints.getGameById + id)
     // if(user){
     // await api.del(endpoints.getElementById + id)
@@ -71,7 +73,7 @@ export async function getComments(gameId) {
 }
 
 export async function getGamesFromCurrentUser(petId) {
-    let user = JSON.parse(sessionStorage.getItem('user'));
+    let user = JSON.parse(localStorage.getItem('user'));
     let userId = user && user._id;
     let res = await api.get(`data/donation?where=petId%3D%22${petId}%22%20and%20_ownerId%3D%22${userId}%22&count`)
     return res
