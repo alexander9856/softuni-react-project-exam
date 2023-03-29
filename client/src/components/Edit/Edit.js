@@ -12,7 +12,7 @@ export const Edit = () => {
         "game-title": "",
         "game-type": "",
         "game-imageUrl": "",
-        "game-suitable": "playstation",
+        "game-suitable": "",
         "game-price": "",
         "game-description": ""
     })

@@ -1,7 +1,9 @@
 import './Create.css'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { createGame } from '../../services/data';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
+import { AuthContext } from '../../contexts/AuthContext'
 export const Create = () => {
     const [values, setValues] = useState({
         "game-title": "",
@@ -11,21 +13,20 @@ export const Create = () => {
         "game-price": "",
         "game-description": ""
     });
+    // const { userId } = useContext(AuthContext)
     const navigate = useNavigate();
 
     const onChangeHandler = (e) => {
-        console.log(e.target.name)
-        console.log(e.target.value)
         setValues(state => ({ ...state, [e.target.name]: e.target.value }))
     }
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target)
-        const data = Object.fromEntries(formData);
+        const data = Object.fromEntries(formData)
+        // data.ownerId = userId;
 
         try {
             const res = await createGame(data);
-            console.log(res)
             navigate('/catalog')
 
         }
@@ -43,7 +44,7 @@ export const Create = () => {
                     <input type="text" id="game-title" name="game-title" value={values['game-title']} onChange={onChangeHandler} required />
 
                     <label htmlFor="game-type">Type:</label>
-                    <input type="text" id="game-type" name="game-type"value={values['game-type']} onChange={onChangeHandler}  required />
+                    <input type="text" id="game-type" name="game-type" value={values['game-type']} onChange={onChangeHandler} required />
 
                     <label htmlFor="game-imageUrl">Image:</label>
                     <input type="text" id="game-imageUrl" name="game-imageUrl" value={values['game-imageUrl']} onChange={onChangeHandler} required />

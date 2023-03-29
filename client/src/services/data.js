@@ -4,9 +4,9 @@ let endpoints = {
     'login': 'users/login',
     'register': 'users/register',
     'logout': 'users/logout',
-    'create': 'jsonstore/games',
-    'getAllItems': 'jsonstore/games',
-    'getGameById': 'jsonstore/games/',
+    'create': 'data/gamesForSale',
+    'getAllItems': 'data/gamesForSale',
+    'getGameById': 'data/gamesForSale/',
 
 }
 export async function login(data) {
