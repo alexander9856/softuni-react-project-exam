@@ -11,13 +11,13 @@ let endpoints = {
 }
 export async function login(data) {
     let user = await api.post(endpoints.login, data)
-    localStorage.setItem('user', JSON.stringify(user))
+    // localStorage.setItem('user', JSON.stringify(user))
     return user
 
 }
 export async function register(data) {
     let user = await api.post(endpoints.register, data)
-    localStorage.setItem('user', JSON.stringify(user))
+    // localStorage.setItem('user', JSON.stringify(user))
     return user
 }
 
@@ -29,7 +29,7 @@ export async function register(data) {
 // }
 export async function logout() {
     await api.get(endpoints.logout)
-    localStorage.removeItem('user')
+    // localStorage.removeItem('user')
 }
 export async function createGame(data) {
     let res = await api.post(endpoints.create, data)

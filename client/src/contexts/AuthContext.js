@@ -2,13 +2,14 @@ import { createContext } from 'react'
 import { login, register, logout } from '../services/data'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export const AuthContext = createContext();
 
 export const Auth = ({
     children
 }) => {
-    const [auth, setAuth] = useState({});
+    const [auth, setAuth] = useLocalStorage('user', {});
     const navigate = useNavigate()
 
     const onLoginSubmit = async (data) => {
