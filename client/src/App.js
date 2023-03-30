@@ -1,11 +1,8 @@
 import './App.css';
 
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { AuthContext } from "./contexts/AuthContext";
+import { Auth } from "./contexts/AuthContext";
 
-import { login, register, logout } from './services/data'
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { Register } from './components/auth/Register/Register';
@@ -19,55 +16,9 @@ import { Edit } from './components/Edit/Edit';
 import { Logout } from './components/auth/Logout';
 
 
-
-
-
 function App() {
-  const [auth, setAuth] = useState({});
-  const navigate = useNavigate()
-  // const [newUser] = useState(false);
-  const onLoginSubmit = async (data) => {
-    try {
-      const result = await login(data)
-      setAuth(result)
-      navigate('/')
-    }
-    catch (err) {
-      console.log(err)
-    }
-  };
-
-  const onRegisterSubmit = async (data) => {
-    try {
-      const result = await register(data)
-      console.log(result)
-
-      setAuth(result)
-      navigate('/')
-    }
-    catch (err) {
-      console.log(err)
-    }
-  };
-
-  const onLogout = async () => {
-    await logout();
-    setAuth({})
-  }
-
-
-
-  const contextValues = {
-    onLoginSubmit,
-    onRegisterSubmit,
-    onLogout,
-    userId: auth._id,
-    token: auth.accessToken,
-    userEmail: auth.email,
-    isAuthenticated: !!auth.accessToken,
-  }
   return (
-    <AuthContext.Provider value={contextValues}>
+    <Auth>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -79,14 +30,13 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/games/details/:gameId' element={<Details />} />
         <Route path='/games/edit/:gameId' element={<Edit />} />
-
       </Routes>
       <main>
 
       </main>
       <Footer />
 
-    </AuthContext.Provider>
+    </Auth>
 
   )
 }

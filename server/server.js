@@ -1363,8 +1363,11 @@
             }
         },
         comments: {
-        
-        }
+
+        },
+        gamesForSale: {
+
+        }   
     };
     var rules$1 = {
         users: {
