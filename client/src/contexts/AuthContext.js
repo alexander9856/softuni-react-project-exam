@@ -46,6 +46,7 @@ export const Auth = ({
         onLogout,
         userId: auth._id,
         token: auth.accessToken,
+        username: auth.username,
         userEmail: auth.email,
         isAuthenticated: !!auth.accessToken,
     }

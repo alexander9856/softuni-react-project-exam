@@ -1,14 +1,15 @@
 import './Profile.css'
-
+import { useContext } from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
 export const Profile = () => {
+    const { username } = useContext(AuthContext)
     return (
         <section id="profile">
             <div className="avatar">
-            <img src={require('../../assets/removedbg.png')} alt="Avatar"/>
+                <img src={require('../../assets/removedbg.png')} alt="Avatar" />
             </div>
             <div className="profile-info">
-                <h1 className="seller">John Doe</h1>
-                <p className="budget">Budget: $50</p>
+                <h1 className="seller">{username}</h1>
                 <h2 className="allGamesForSale">Published Games for Sale:</h2>
                 <ul>
                     <li>Mortal Kombat 11</li>
