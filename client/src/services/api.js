@@ -17,9 +17,9 @@ async function request(method, url, data) {
     try {
         let res = await fetch(host + url, option);
         if (!res.ok) {
-            // if (res.status === 403) {
-            //     localStorage.removeItem('user')
-            // }
+            if (res.status === 403) {
+                localStorage.removeItem('user')
+            }
             const err = await res.json();
             throw new Error(err.message)
         }

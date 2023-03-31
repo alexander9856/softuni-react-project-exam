@@ -5,7 +5,7 @@ export const CatalogItem = (game) => {
         <div className="game">
             <img src={game['game-imageUrl']} />
             <h2>{game['game-title']}</h2>
-            <p>{game['game-price']}$</p>
+            <p>Price: {game['game-price']}$</p>
             <Link to={`/games/details/${game._id}`} className="details">Details</Link>
         </div>
     )
