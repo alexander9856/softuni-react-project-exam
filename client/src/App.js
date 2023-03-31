@@ -14,7 +14,7 @@ import { Profile } from './components/Profile/Profile';
 import { Details } from './components/Details/Details';
 import { Edit } from './components/Edit/Edit';
 import { Logout } from './components/auth/Logout';
-import { Cart } from './components/cart/Cart';
+import { Cart } from './components/Cart/Cart';
 import { ShoppingCart } from './contexts/CartContext';
 
 

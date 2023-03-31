@@ -12,10 +12,12 @@ import { CartContext } from '../../contexts/CartContext'
 export const Details = () => {
     const navigate = useNavigate();
     const { gameId } = useParams();
-    const { isAuthenticated } = useContext(AuthContext)
-    const { setItems } = useContext(CartContext)
-
-
+    const { isAuthenticated } = useContext(AuthContext);
+    const { items, setItems } = useContext(CartContext);
+    let isAdded = false
+    if(items.find(x => x._id == gameId)){
+        isAdded = true
+    }
     const userId = JSON.parse(localStorage.getItem('user'))?._id
     let ownerId = ''
 
@@ -63,7 +65,8 @@ export const Details = () => {
                             <Link to={`/games/edit/${gameId}`} className="edit-button">Edit</Link>
                             <button onClick={deleteHandler} className="delete-button" >Delete</button>
                         </>
-                        : < button onClick={(e) => addToShoppingCart(e, game)} className="add-to-cart-button">Add to cart</button>}
+                        : isAdded ? <button className='added-to-cart'>Added to cart</button> : < button onClick={(e) => addToShoppingCart(e, game)} className="add-to-cart-button">Add to cart</button>
+                         }
                 </div>}
             </div>
         </section >

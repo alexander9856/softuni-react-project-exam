@@ -10,7 +10,7 @@ export const Cart = () => {
     return (
         <section id="shoppingCart">
             {items.length > 0 ? <div className="cart">
-                {items.map(x => (<CartItem game={x} />))}
+                {items.map(x => (<CartItem key={x._id} game={x} />))}
                 <div className="total">
                     <span>Total: </span>
                     <span className="total-price">${price}</span>
