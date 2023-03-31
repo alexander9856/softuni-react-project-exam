@@ -6,12 +6,16 @@ import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext'
 import { delGame } from '../../services/data'
+import { CartContext } from '../../contexts/CartContext'
 
 
 export const Details = () => {
     const navigate = useNavigate();
     const { gameId } = useParams();
     const { isAuthenticated } = useContext(AuthContext)
+    const { setItems } = useContext(CartContext)
+
+
     const userId = JSON.parse(localStorage.getItem('user'))?._id
     let ownerId = ''
 
@@ -40,9 +44,8 @@ export const Details = () => {
             console.log(err)
         }
     }
-    const addToShopingCart = (e) => {
-        console.log('haha')
-        navigate('/cart')
+    const addToShoppingCart = (e, game) => {
+        setItems(state => [...state, game])
     }
 
     return (
@@ -55,12 +58,12 @@ export const Details = () => {
                 <p className="game-price">Price: {game['game-price']}$</p>
                 <p className="game-description">Description: {game['game-description']}</p>
                 {isAuthenticated && < div className="button-container">
-                    {game._ownerId === userId ? 
-                    <>
-                    <Link to={`/games/edit/${gameId}`} className="edit-button">Edit</Link>
-                    <button onClick={deleteHandler} className="delete-button" >Delete</button>
-                    </>
-                    : < button onClick={addToShopingCart} className="add-to-cart-button">Add to cart</button>}
+                    {game._ownerId === userId ?
+                        <>
+                            <Link to={`/games/edit/${gameId}`} className="edit-button">Edit</Link>
+                            <button onClick={deleteHandler} className="delete-button" >Delete</button>
+                        </>
+                        : < button onClick={(e) => addToShoppingCart(e, game)} className="add-to-cart-button">Add to cart</button>}
                 </div>}
             </div>
         </section >

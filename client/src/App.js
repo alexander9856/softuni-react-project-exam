@@ -15,27 +15,28 @@ import { Details } from './components/Details/Details';
 import { Edit } from './components/Edit/Edit';
 import { Logout } from './components/auth/Logout';
 import { Cart } from './components/cart/Cart';
+import { ShoppingCart } from './contexts/CartContext';
 
 
 function App() {
   return (
     <Auth>
-      <Header />
-      <Footer />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/catalog' element={<Catalog />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/logout' element={<Logout />} />
-        <Route path='/create' element={<Create />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/games/details/:gameId' element={<Details />} />
-        <Route path='/games/edit/:gameId' element={<Edit />} />
-        <Route path='/cart' element={<Cart />} />
-        
-      </Routes>
-
+      <ShoppingCart>
+        <Header />
+        <Footer />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/catalog' element={<Catalog />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
+          <Route path='/create' element={<Create />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/games/details/:gameId' element={<Details />} />
+          <Route path='/games/edit/:gameId' element={<Edit />} />
+          <Route path='/cart' element={<Cart />} />
+        </Routes>
+      </ShoppingCart>
     </Auth>
 
   )

@@ -1,37 +1,106 @@
+#shoppingCart {
+  width: 45%;
+  margin-top: 3rem;
+}
+
 .cart {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-  }
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.game-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+
+
+.cartItemImg {
+  width: 15%;
+  height: 15%;
+  margin-right: 20px;
+  margin: 0;
+
+}
+
+.game-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4rem;
+  justify-content: center;
+  text-align: left;
+  margin: 0;
+  margin-left: 4rem;
+}
+.cart-titles{
+  display: flex;
+  flex-direction: row;
+}
+.game-details h2 {
+  font-size: 19px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.game-details p {
+  font-size: 19px;
+  padding: 0;
+  margin: 0px 0px 10px 0px;
   
-  .item {
-    display: flex;
-    margin: 10px 0;
-  }
-  
-  .item img {
-    height: 100px;
-    margin-right: 10px;
-  }
-  
-  .item-details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .item-details h3 {
-    font-size: 24px;
-    margin-bottom: 5px;
-  }
-  
-  .item-details p {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .item-details button {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 5px 10
-  }
+}
+
+.price {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.remove-item {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-top: 2rem;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-left: 11rem;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-left: 34rem;
+}
+
+.total span:first-child {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.total-price {
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+
+/* empty cart */
+
+.empty-cart{
+  margin-top: 15rem;
+  font-size: 24px;
+}
+.empty-cart a{
+  margin-top: 2rem;
+  margin-left: 28rem;
+  color: rgb(226, 223, 237);  
+}
+.empty-cart p a{
+  color: rgb(80, 9, 222);
+  text-decoration: underline; 
+}
