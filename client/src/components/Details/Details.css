@@ -1,42 +1,47 @@
 #details-page {
-    width: 50%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    height: 50vh;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction:row;
-    justify-content: center;
-    vertical-align: middle;
-    text-align: left;
-    margin-top: 8rem;
-  }
-  
-  .game-properties{
-    margin-left: 2rem;
-  }
-  .game-title,
-  .game-type {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .game-image {
-    width: 40%;
-    height: 100%;
-    margin: 0px 0px 20px 0px;
-    
-  }
-  
- 
-  .game-type,.game-suitable,.game-price,.game-description{
-    margin: 20px 0px;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  /* .game-type {
+  width: 50%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 50vh;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: left;
+  margin-top: 8rem;
+}
+
+.game-properties {
+  margin-left: 2rem;
+}
+
+.game-title,
+.game-type {
+  margin: 0;
+  padding: 0;
+}
+
+.game-image {
+  width: 40%;
+  height: 100%;
+  margin: 0px 0px 20px 0px;
+
+}
+
+
+.game-type,
+.game-suitable,
+.game-price,
+.game-description {
+  margin: 20px 0px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* .game-type {
     font-size: 20px;
     margin-bottom: 10px;
   }
@@ -50,43 +55,52 @@
     font-size: 24px;
     margin-bottom: 20px;
   } */
-  
-  .game-description {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  /* button */
-  .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3.2rem;
-  
-  }
-  
-  .edit-button, .delete-button,.buy-button {
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 10px ;
-  }
-  .buy-button {
-    background-color: #83207c;
-    color: #fff;
-    
-  }
-  .edit-button {
-    background-color: #2196f3;
-    color: #fff;
-  }
-  
-  .delete-button {
-    background-color: #f44336;
-    color: #fff;
-  }
-  
-  .edit-button:hover, .delete-button:hover,.buy-button:hover {
-    opacity: 0.8;
-  }
+
+.game-description {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.2rem;
+
+}
+
+.edit-button,
+.delete-button,
+.add-to-cart-button {
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.add-to-cart-button {
+  background-color: #83207c;
+  color: #fff;
+  margin-right: 3rem;
+
+}
+
+.edit-button {
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 0.3em;
+
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.edit-button:hover,
+.delete-button:hover,
+.add-to-cart-button:hover {
+  opacity: 0.8;
+}

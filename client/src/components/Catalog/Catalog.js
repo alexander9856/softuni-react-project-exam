@@ -16,6 +16,7 @@ export const Catalog = () => {
     }, [])
     return (
         <section id="dashboard">
+            {games.length > 0 && <h2>All listed Games</h2>}
             <div className="games">
                 {games.length > 0 ? games.map(x => (<CatalogItem key={x._id} {...x} />)) : <EmptyCatalog />}
             </div>

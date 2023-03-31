@@ -38,6 +38,7 @@ export const Auth = ({
     const onLogout = async () => {
         await logout();
         setAuth({})
+        localStorage.removeItem('user')
     }
     const contextValues = {
         onLoginSubmit,
