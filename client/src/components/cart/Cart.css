@@ -2,7 +2,10 @@
   width: 45%;
   margin-top: 3rem;
 }
-
+#shoppingCart h1{
+  text-align: center;
+  margin-bottom: 2rem;
+}
 .cart {
   border: 1px solid #ccc;
   padding: 20px;

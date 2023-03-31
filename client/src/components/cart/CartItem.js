@@ -4,7 +4,10 @@ export const CartItem = ({ game }) => {
     const { setItems } = useContext(CartContext);
     console.log(setItems)
     const removeFromCartHandler = (e) => {
-        setItems(state => state.filter(x => x._id !== game._id ))
+        const confirmation = window.confirm(`Are you sure you want to remove ${game['game-title']} from cart?`)
+        if(confirmation){
+            setItems(state => state.filter(x => x._id !== game._id ))
+        }
     }
     function capitalize(s) {
         if (s) {
