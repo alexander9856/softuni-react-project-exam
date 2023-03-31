@@ -13,13 +13,14 @@ export const Header = () => {
                 {/* ? logged in : guests */}
                 {isAuthenticated ? <div id="user">
                     <Link to="/create">Sell</Link>
-                    < Link to="/profile">Profile</Link>
+                    <Link to="/cart"><i className="fa-solid fa-cart-shopping"></i>Shopping cart</Link>
+                    < Link to="/profile"><i className="fa-solid fa-user"></i>Profile</Link>
                     <Link to="/logout" id="logoutBtn">Logout</Link>
                 </div>
                  : 
                  <div id="guest">
-                    < Link to="/login">Login</Link>
-                    < Link to="/register">Register</Link>
+                    < Link to="/login"><i className="fa-solid fa-right-to-bracket"></i>Login</Link>
+                    < Link to="/register"><i className="fa-solid fa-user-plus"></i>Register</Link>
                 </div>}
 
 

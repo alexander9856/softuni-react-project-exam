@@ -19,6 +19,7 @@ export const Details = () => {
     useEffect(() => {
         getGamebyId(gameId)
             .then(res => {
+                ownerId = res._ownerId
                 setGame(res)
             })
     }, [gameId]);
@@ -39,6 +40,10 @@ export const Details = () => {
             console.log(err)
         }
     }
+    const addToShopingCart = (e) => {
+        console.log('haha')
+        navigate('/cart')
+    }
 
     return (
         <section id="details-page">
@@ -50,16 +55,12 @@ export const Details = () => {
                 <p className="game-price">Price: {game['game-price']}$</p>
                 <p className="game-description">Description: {game['game-description']}</p>
                 {isAuthenticated && < div className="button-container">
-                    {/* <!-- user and owner --> */}
-                    {game.ownerId == userId &&
-                        <>
-                            <Link to={`/games/edit/${gameId}`} className="edit-button">Edit</Link>
-                            <button onClick={deleteHandler} className="delete-button" >Delete</button>
-                        </>}
-
-
-                    {/* <!-- user and not owner --> */}
-                    {game.ownerId !== userId && < button className="add-to-cart-button">Add to cart</button>}
+                    {game._ownerId === userId ? 
+                    <>
+                    <Link to={`/games/edit/${gameId}`} className="edit-button">Edit</Link>
+                    <button onClick={deleteHandler} className="delete-button" >Delete</button>
+                    </>
+                    : < button onClick={addToShopingCart} className="add-to-cart-button">Add to cart</button>}
                 </div>}
             </div>
         </section >

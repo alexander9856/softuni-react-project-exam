@@ -14,12 +14,14 @@ import { Profile } from './components/Profile/Profile';
 import { Details } from './components/Details/Details';
 import { Edit } from './components/Edit/Edit';
 import { Logout } from './components/auth/Logout';
+import { Cart } from './components/cart/Cart';
 
 
 function App() {
   return (
     <Auth>
       <Header />
+      <Footer />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/catalog' element={<Catalog />} />
@@ -30,11 +32,9 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/games/details/:gameId' element={<Details />} />
         <Route path='/games/edit/:gameId' element={<Edit />} />
+        <Route path='/cart' element={<Cart />} />
+        
       </Routes>
-      <main>
-
-      </main>
-      <Footer />
 
     </Auth>
 
