@@ -15,12 +15,12 @@ import { Details } from './components/Details/Details';
 import { Edit } from './components/Edit/Edit';
 import { Logout } from './components/auth/Logout';
 import { Cart } from './components/Cart/Cart';
-import { ShoppingCart } from './contexts/CartContext';
+import { Game } from './contexts/GameContext';
 
 
 function App() {
   return (
-    <ShoppingCart>
+    <Game>
       <Auth>
         <Header />
         <Footer />
@@ -37,7 +37,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
         </Routes>
       </Auth>
-    </ShoppingCart>
+    </Game>
 
   )
 }

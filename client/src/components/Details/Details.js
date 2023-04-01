@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext'
 import { delGame } from '../../services/data'
-import { CartContext } from '../../contexts/CartContext'
+import { GameContext } from '../../contexts/GameContext'
 
 
 export const Details = () => {
     const navigate = useNavigate();
     const { gameId } = useParams();
     const { isAuthenticated } = useContext(AuthContext);
-    const { items, setItems } = useContext(CartContext);
+    const { items, setItems } = useContext(GameContext);
     let isAdded = false
     if(items.find(x => x._id == gameId)){
         isAdded = true

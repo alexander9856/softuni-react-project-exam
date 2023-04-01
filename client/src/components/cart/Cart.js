@@ -1,12 +1,11 @@
 import './Cart.css';
 
 import { useContext } from 'react';
-import { CartContext } from '../../contexts/CartContext'
+import { GameContext } from '../../contexts/GameContext'
 import { CartItem } from './CartItem';
 import { EmptyCart } from './EmptyCart';
 export const Cart = () => {
-    const { items } = useContext(CartContext)
-    const { price } = useContext(CartContext)
+    const { items, price } = useContext(GameContext)
     return (
         <section id="shoppingCart">
             {items.length > 0 && <h1>Shopping cart</h1>}
@@ -16,7 +15,7 @@ export const Cart = () => {
                     <span>Total: </span>
                     <span className="total-price">${price}</span>
                 </div>
-                </div> : <EmptyCart />}
+            </div> : <EmptyCart />}
         </section>
     )
 }

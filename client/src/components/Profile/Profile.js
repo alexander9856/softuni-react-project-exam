@@ -1,5 +1,7 @@
 import './Profile.css'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
+
 import { AuthContext } from '../../contexts/AuthContext'
 export const Profile = () => {
     const { username } = useContext(AuthContext)
@@ -7,15 +9,16 @@ export const Profile = () => {
         <section id="profile">
             <div className="avatar">
                 <img src={require('../../assets/removedbg.png')} alt="Avatar" />
-            </div>
-            <div className="profile-info">
                 <h1 className="seller">{username}</h1>
-                <h2 className="allGamesForSale">Published Games for Sale:</h2>
-                <ul>
-                    <li>Mortal Kombat 11</li>
-                    <li>Mortal Kombat 10</li>
-                    <li>UFC 3</li>
-                </ul>
+            </div>
+            <h2 className="allGamesForSale">Published Games for Sale:</h2>
+            <div className="added-items">
+                <div className="added-game">
+                    <img src={require('../../assets/mortal-kombat-11-ultimate-edition-ps4-30.jpg')} alt="Avatar" />
+                    <h2>Mortal Kombat 11</h2>
+                    <p>50$</p>
+                    <Link to="/details.html" className="details">Details</Link>
+                </div>
             </div>
         </section>
     )

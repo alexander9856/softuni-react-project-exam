@@ -3,7 +3,7 @@ import { login, register, logout } from '../services/data'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import { CartContext } from '../contexts/CartContext'
+import { GameContext } from './GameContext'
 
 export const AuthContext = createContext();
 
@@ -11,7 +11,7 @@ export const Auth = ({
     children
 }) => {
     const [auth, setAuth] = useLocalStorage('user', {});
-    const { setItems } = useContext(CartContext)
+    const { setItems } = useContext(GameContext)
     const navigate = useNavigate()
 
     const onLoginSubmit = async (data) => {

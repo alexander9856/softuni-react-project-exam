@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { CartContext } from '../../contexts/CartContext'
+import { GameContext } from '../../contexts/GameContext'
 export const CartItem = ({ game }) => {
-    const { setItems } = useContext(CartContext);
+    const { setItems } = useContext(GameContext);
     console.log(setItems)
     const removeFromCartHandler = (e) => {
         const confirmation = window.confirm(`Are you sure you want to remove ${game['game-title']} from cart?`)

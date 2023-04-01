@@ -4,7 +4,9 @@ import { createGame } from '../../services/data';
 import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthContext'
+import { GameContext } from '../../contexts/GameContext'
 export const Create = () => {
+    const { setProfileGames } = useContext(GameContext)
     const [values, setValues] = useState({
         "game-title": "",
         "game-type": "",
