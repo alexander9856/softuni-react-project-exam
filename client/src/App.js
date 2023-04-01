@@ -20,8 +20,8 @@ import { ShoppingCart } from './contexts/CartContext';
 
 function App() {
   return (
-    <Auth>
-      <ShoppingCart>
+    <ShoppingCart>
+      <Auth>
         <Header />
         <Footer />
         <Routes>
@@ -36,8 +36,8 @@ function App() {
           <Route path='/games/edit/:gameId' element={<Edit />} />
           <Route path='/cart' element={<Cart />} />
         </Routes>
-      </ShoppingCart>
-    </Auth>
+      </Auth>
+    </ShoppingCart>
 
   )
 }

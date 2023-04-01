@@ -1,8 +1,9 @@
-import { createContext } from 'react'
+import { createContext, useContext } from 'react'
 import { login, register, logout } from '../services/data'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLocalStorage } from '../hooks/useLocalStorage';
+import { CartContext } from '../contexts/CartContext'
 
 export const AuthContext = createContext();
 
@@ -10,6 +11,7 @@ export const Auth = ({
     children
 }) => {
     const [auth, setAuth] = useLocalStorage('user', {});
+    const { setItems } = useContext(CartContext)
     const navigate = useNavigate()
 
     const onLoginSubmit = async (data) => {
@@ -38,6 +40,7 @@ export const Auth = ({
     const onLogout = async () => {
         await logout();
         setAuth({})
+        setItems([])
         localStorage.removeItem('user')
     }
     const contextValues = {

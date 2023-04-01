@@ -78,7 +78,7 @@
   margin-top: 2.5rem;
   cursor: pointer;
   align-self: flex-start;
-  margin-left: 13rem;
+  margin-left: 10rem;
 }
 
 .total {
@@ -103,17 +103,37 @@
 
 
 /* empty cart */
+#empty-cart {
+  margin-top: 2rem;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
 
-.empty-cart {
-  margin-top: 15rem;
-  font-size: 24px;
+}
+#empty-cart h2 {
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
 }
 
-.empty-cart a {
-  margin-top: 2rem;
-  margin-left: 28rem;
-  color: rgb(80, 9, 222);
-  text-decoration: underline;
+.emptyCartImg {
+  width: 65%;
+  margin-right: 4rem;
+}
 
+.browse {
+  /* display: block; */
+  /* margin-top: 55rem; */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #14c682;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0.3em;
 
 }
