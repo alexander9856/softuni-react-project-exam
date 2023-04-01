@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext'
 import { GameContext } from '../../contexts/GameContext'
 export const Create = () => {
-    const { setProfileGames } = useContext(GameContext)
+    // const { setProfileGames } = useContext(GameContext)
     const [values, setValues] = useState({
         "game-title": "",
         "game-type": "",
@@ -29,6 +29,7 @@ export const Create = () => {
 
         try {
             const res = await createGame(data);
+            // setProfileGames(state => [...state, res])
             navigate('/catalog')
 
         }

@@ -3,8 +3,12 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { AuthContext } from '../../contexts/AuthContext'
+import { GameContext } from '../../contexts/GameContext'
+
 export const Profile = () => {
-    const { username } = useContext(AuthContext)
+    const { username } = useContext(AuthContext);
+    const { profileGames } = useContext(GameContext)
+    console.log(profileGames)
     return (
         <section id="profile">
             <div className="avatar">
