@@ -8,15 +8,15 @@ export const Game = ({
 }) => {
     const [items, setItems] = useState([]);
     const price = items.reduce((a, b) => a + Number(b['game-price']), 0)
-    
-    // const [profileGames, setProfileGames] = useState([])
+
+    const [userGames, setUserGames] = useState([]);
     const user = localStorage.getItem('user')
     const values = {
         items,
         setItems,
         price,
-        // profileGames,
-        // setProfileGames
+        userGames,
+        setUserGames
     }
     return (
         <GameContext.Provider value={values}>

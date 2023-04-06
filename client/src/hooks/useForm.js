@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 export const useForm = (initialValues, onSubmitHandler) => {
     const [values, setValues] = useState(initialValues);
+    const [error, setErrors] = useState([]);
 
     const changeHandler = (e) => {
         setValues(state => ({ ...state, [e.target.name]: e.target.value }))
