@@ -3,29 +3,30 @@ import { useState, useContext } from 'react';
 import { createGame } from '../../services/data';
 import { useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../../contexts/AuthContext'
-import { GameContext } from '../../contexts/GameContext'
+import { useForm } from 'react-hook-form'
+
 export const Create = () => {
-    // const { setProfileGames } = useContext(GameContext)
-    const [values, setValues] = useState({
-        "game-title": "",
-        "game-type": "",
-        "game-imageUrl": "",
-        "game-suitable": "playstation",
-        "game-price": "",
-        "game-description": ""
-    });
+    const { register, handleSubmit, formState: { errors }, getValues } = useForm()
+
+    // const [values, setValues] = useState({
+    //     "game-title": "",
+    //     "game-type": "",
+    //     "game-imageUrl": "",
+    //     "game-suitable": "playstation",
+    //     "game-price": "",
+    //     "game-description": ""
+    // });
     // const { userId } = useContext(AuthContext)
     const navigate = useNavigate();
 
-    const onChangeHandler = (e) => {
-        setValues(state => ({ ...state, [e.target.name]: e.target.value }))
-    }
-    const onSubmitHandler = async (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target)
-        const data = Object.fromEntries(formData)
+    // const onChangeHandler = (e) => {
+    //     setValues(state => ({ ...state, [e.target.name]: e.target.value }))
+    // }
+    const onSubmitHandler = async (data) => {
+        // const formData = new FormData(e.target)
+
         // data.ownerId = userId;
+        console.log(data)
 
         try {
             const res = await createGame(data);
@@ -41,19 +42,58 @@ export const Create = () => {
     return (
         <section className="createEditGame">
             <img src={require('../../assets/[removal.ai]_tmp-641b8c4d4c23f_POLSYR.png')} />
-            <form className="modifyGame" onSubmit={onSubmitHandler}>
+            <form className="modifyGame" onSubmit={handleSubmit(onSubmitHandler)} method='post'>
                 <div className="game-form-group">
                     <label htmlFor="game-title">Game Title:</label>
-                    <input type="text" id="game-title" name="game-title" value={values['game-title']} onChange={onChangeHandler} required />
+                    <input
+                        type="text"
+                        id="game-title"
+                        name="game-title"
+                        {...register("game-title", {
+                            required: "Title is required",
+                            minLength: {
+                                value: 2,
+                                message: "Title must be at least 2 characters long",
+                            },
+                        })}
+                    />
+                    <p className='wrongInputCreate'>{errors['game-title']?.message}</p>
+
 
                     <label htmlFor="game-type">Type:</label>
-                    <input type="text" id="game-type" name="game-type" value={values['game-type']} onChange={onChangeHandler} required />
+                    <input
+                        type="text"
+                        id="game-type"
+                        name="game-type"
+                        {...register("game-type", {
+                            required: "Type is required",
+                            minLength: {
+                                value: 2,
+                                message: "Type must be at least 2 characters long",
+                            },
+                        })}
+                    />
+                    <p className='wrongInputCreate'>{errors['game-type']?.message}</p>
+
 
                     <label htmlFor="game-imageUrl">Image:</label>
-                    <input type="text" id="game-imageUrl" name="game-imageUrl" value={values['game-imageUrl']} onChange={onChangeHandler} required />
+                    <input
+                        type="text"
+                        id="game-imageUrl"
+                        name="game-imageUrl"
+                        {...register("game-imageUrl", {
+                            required: "Image is required",
+                            pattern: {
+                                value: /^https?:\/\//,
+                                message: "Image url must start with https:// or http://"
+                            }
+                        })}
+                    />
+                    <p className='wrongInputCreate'>{errors['game-imageUrl']?.message}</p>
 
                     <label htmlFor="game-suitable">Suitable for:</label>
-                    <select id="game-suitable" name="game-suitable" value={values['game-suitable']} onChange={onChangeHandler} required>
+
+                    <select id="game-suitable" name="game-suitable" {...register("game-suitable", {})}>
                         <option value="pc">PC</option>
                         <option value="xbox">Xbox</option>
                         <option value="playstation">PlayStation</option>
@@ -62,10 +102,36 @@ export const Create = () => {
                     </select>
 
                     <label htmlFor="game-price">Price:</label>
-                    <input type="number" id="game-price" name="game-price" value={values['game-price']} onChange={onChangeHandler} required />
+                    <input
+                        type="number"
+                        id="game-price"
+                        name="game-price"
+                        {...register("game-price", {
+                            required: "Price  is required",
+                            min: {
+                                value: 5,
+                                message: "Price must be at least 5$",
+                            },
+                        })}
+                    />
+                    <p className='wrongPrice'>{errors['game-price']?.message}</p>
 
-                    <label htmlFor="game-description">Description</label>
-                    <textarea name="game-description" id="game-description" value={values['game-description']} onChange={onChangeHandler} cols="20" rows="3"></textarea>
+                    <label htmlFor="game-description" className='descLabel'>Description</label>
+                    <textarea
+                        name="game-description"
+                        id="game-description"
+                        cols="20"
+                        rows="2"
+                        {...register("game-description", {
+                            required: "Description  is required",
+                            minLength: {
+                                value: 10,
+                                message: "Description must be at least 10 characters long",
+                            },
+                        })}>
+                    </textarea>
+                    <p className='wrongPrice'>{errors['game-description']?.message}</p>
+
                 </div>
                 <div className="form-group">
                     <button className="submitGame" type="submit">Publish offer</button>

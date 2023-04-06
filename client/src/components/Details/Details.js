@@ -15,7 +15,7 @@ export const Details = () => {
     const { isAuthenticated } = useContext(AuthContext);
     const { items, setItems } = useContext(GameContext);
     let isAdded = false
-    if(items.find(x => x._id == gameId)){
+    if (items.find(x => x._id == gameId)) {
         isAdded = true
     }
     const userId = JSON.parse(localStorage.getItem('user'))?._id
@@ -31,8 +31,12 @@ export const Details = () => {
     }, [gameId]);
     function capitalize(s) {
         if (s) {
+            if (s == 'pc') {
+                return s.toUpperCase()
+            }
             return s[0].toUpperCase() + s.slice(1);
         }
+
     }
     const deleteHandler = async (e) => {
         try {
@@ -66,7 +70,7 @@ export const Details = () => {
                             <button onClick={deleteHandler} className="delete-button" >Delete</button>
                         </>
                         : isAdded ? <button className='added-to-cart'>Added to cart</button> : < button onClick={(e) => addToShoppingCart(e, game)} className="add-to-cart-button">Add to cart</button>
-                         }
+                    }
                 </div>}
             </div>
         </section >

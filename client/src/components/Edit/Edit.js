@@ -1,11 +1,14 @@
 import './Edit.css'
 
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { getGamebyId } from '../../services/data';
+import { useForm } from 'react-hook-form'
 import { useState, useEffect } from 'react';
+
+import { getGamebyId } from '../../services/data';
 
 import { updateGame } from '../../services/data'
 export const Edit = () => {
+    const { register, handleSubmit, formState: { errors }, getValues } = useForm()
     const navigate = useNavigate();
     const { gameId } = useParams();
     const [values, setValues] = useState({

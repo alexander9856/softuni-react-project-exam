@@ -3,10 +3,10 @@
     flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px 20px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    margin-top: -55px;
+    margin-top: -50px;
 }
 
 .createEditGame {
@@ -28,6 +28,7 @@
     margin-bottom: 5px;
     margin: 0px 0px 5px 0px;
     color: white;
+
 }
 
 .createEditGame img {
@@ -46,15 +47,17 @@
     width: 100%;
     margin-top: 10px;
 }
-
-#game-suitable {
-    margin-bottom: 10px;
+.descLabel{
+    margin-bottom: -105px;
 }
+ /* #game-suitable {
+    margin-bottom: 10px;
+} */
 
-#game-price {
+/* #game-price {
     margin-bottom: 10px;
 
-}
+}  */
 
 .submitGame {
     padding: 10px;
@@ -68,4 +71,20 @@
 
 .submitGame:hover {
     background-color: #94b1d1;
+}
+
+.wrongInputCreate{
+    color: rgb(134, 21, 21);
+    margin-top: -20px;
+    margin-bottom: 7.5px;
+    
+    font-weight: 500
+}
+
+.wrongPrice{
+    color: rgb(134, 21, 21);
+    font-weight: 500;
+    margin-top: -5px;
+
+
 }
