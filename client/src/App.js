@@ -16,6 +16,8 @@ import { Edit } from './components/Edit/Edit';
 import { Logout } from './components/auth/Logout';
 import { Cart } from './components/Cart/Cart';
 import { Game } from './contexts/GameContext';
+import { RouteGuard } from './components/common/RouteGuards';
+import { NotFound } from './components/NotFound/NotFound';
 
 
 function App() {
@@ -29,12 +31,30 @@ function App() {
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/logout' element={<Logout />} />
-          <Route path='/create' element={<Create />} />
-          <Route path='/profile' element={<Profile />} />
+
+          <Route element={<RouteGuard />}>
+            <Route path='/logout' element={<Logout />} />
+          </Route>
+
+          <Route element={<RouteGuard />}>
+            <Route path='/create' element={<Create />} />
+          </Route>
+
+          <Route element={<RouteGuard />}>
+            <Route path='/games/edit/:gameId' element={<Edit />} />
+          </Route>
+
+          <Route element={<RouteGuard />}>
+            <Route path='/profile' element={<Profile />} />
+          </Route>
+
+          <Route element={<RouteGuard />}>
+            <Route path='/cart' element={<Cart />} />
+          </Route>
           <Route path='/games/details/:gameId' element={<Details />} />
-          <Route path='/games/edit/:gameId' element={<Edit />} />
-          <Route path='/cart' element={<Cart />} />
+
+          <Route path="*" element={<NotFound />} />
+
         </Routes>
       </Auth>
     </Game>
