@@ -54,16 +54,17 @@
 }
 
 /* Empty catalog */
-.empty-catalog{
+.empty-profile{
     font-size: 24px;
     margin-top: 10rem;
+    margin-left: 11rem
 }
-.empty-catalog p{
+.empty-profile p{
     margin-top: 2rem;
     margin-left: 28rem;
     color: rgb(226, 223, 237);  
 }
-.empty-catalog p a{
+.empty-profile p a{
     color: rgb(80, 9, 222);
     text-decoration: underline; 
 }

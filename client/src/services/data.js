@@ -21,12 +21,6 @@ export async function register(data) {
     return user
 }
 
-// export async function getMyGames() {
-//     let user = JSON.parse(localStorage.getItem('user'));
-//     let userId = user && user._id;
-//     let data = await api.get(`data/posts?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`)
-//     return data
-// }
 export async function logout() {
     await api.get(endpoints.logout)
     // localStorage.removeItem('user')
@@ -52,13 +46,7 @@ export async function updateGame(id, data) {
 }
 
 export async function delGame(id) {
-    // let user = JSON.parse(localStorage.getItem('user'));
     await api.del(endpoints.getGameById + id)
-    // if(user){
-    // await api.del(endpoints.getElementById + id)
-
-    // }
-
 }
 
 

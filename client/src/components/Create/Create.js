@@ -30,7 +30,6 @@ export const Create = () => {
 
         try {
             const res = await createGame(data);
-            // setProfileGames(state => [...state, res])
             navigate('/catalog')
 
         }
