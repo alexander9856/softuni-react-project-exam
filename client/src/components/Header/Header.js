@@ -14,7 +14,7 @@ export const Header = () => {
                 {isAuthenticated ? <div id="user">
                     <Link to="/create">Sell</Link>
                     <Link to="/cart"><i className="fa-solid fa-cart-shopping"></i>Shopping cart</Link>
-                    < Link to="/profile"><i className="fa-solid fa-user"></i>Profile</Link>
+                    <Link to="/profile"><i className="fa-solid fa-user"></i>Profile</Link>
                     <Link to="/logout" id="logoutBtn"><i className="fa-solid fa-right-from-bracket"></i>Logout</Link>
                 </div>
                     :
