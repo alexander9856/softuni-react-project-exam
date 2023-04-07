@@ -9,10 +9,10 @@ export const useLocalStorage = (key, initValue) => {
             const user = JSON.parse(isUser);
             setState(user)
         }
-        else{
+        else {
             localStorage.removeItem(key)
         }
-    },[])
+    }, [])
     const setLocalStorageState = (value) => {
         setState(value);
 

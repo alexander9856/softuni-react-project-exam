@@ -26,7 +26,7 @@ export const Auth = ({
     };
     const onRegisterSubmit = async (data) => {
         try {
-            const result = await register(data)
+            const result = await register({ email: data.email, password: data.password })
             console.log(result)
 
             setAuth(result)

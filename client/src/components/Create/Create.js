@@ -6,37 +6,25 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form'
 
 export const Create = () => {
-    const { register, handleSubmit, formState: { errors }, getValues } = useForm()
-
-    // const [values, setValues] = useState({
-    //     "game-title": "",
-    //     "game-type": "",
-    //     "game-imageUrl": "",
-    //     "game-suitable": "playstation",
-    //     "game-price": "",
-    //     "game-description": ""
-    // });
-    // const { userId } = useContext(AuthContext)
+    const { register, handleSubmit, formState: { errors }, getValues } = useForm({
+        defaultValues: {
+            "game-title": "",
+            "game-type": "",
+            "game-imageUrl": "",
+            "game-suitable": "playstation",
+            "game-price": "",
+            "game-description": ""
+        }
+    })
     const navigate = useNavigate();
-
-    // const onChangeHandler = (e) => {
-    //     setValues(state => ({ ...state, [e.target.name]: e.target.value }))
-    // }
     const onSubmitHandler = async (data) => {
-        // const formData = new FormData(e.target)
-
-        // data.ownerId = userId;
-        console.log(data)
-
         try {
             const res = await createGame(data);
             navigate('/catalog')
-
         }
         catch (err) {
             console.log(err)
         }
-
     }
     return (
         <section className="createEditGame">
