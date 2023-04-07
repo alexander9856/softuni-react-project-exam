@@ -1,7 +1,7 @@
 # softuni-react-project-exam-GameGlancer
 
 ## Description
-This is a full stack web application, which users use to create an account, login with it and publish games for sale.
+This is a full stack web application, which users use to create an account, login and publish video games for sale.
 Users can add to cart games they like if they are logged in. Owners can read their own creations in order to edit and delete them.
 
 
