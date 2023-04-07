@@ -4,9 +4,13 @@ import { useState, useEffect } from 'react'
 import { getAllGames } from '../../services/data'
 import { CatalogItem } from './CatalogItem'
 import { EmptyCatalog } from './EmptyCatalog'
+import { Search } from './Search'
 
 export const Catalog = () => {
     const [games, setGames] = useState([]);
+    const [searchedGames, setSearchedGames] = useState([]);
+    let isGames = false;
+    if (games.length > 0 || searchedGames.length > 0) isGames = true
     useEffect(() => {
         getAllGames()
             .then(res => {
@@ -14,12 +18,22 @@ export const Catalog = () => {
                 setGames(res)
             })
     }, [])
+    console.log(games)
     return (
-        <section id="dashboard">
-            {games.length > 0 && <h1>All listings</h1>}
-            <div className="games">
-                {games.length > 0 ? games.map(x => (<CatalogItem key={x._id} {...x} />)) : <EmptyCatalog />}
-            </div>
-        </section>
+        <>
+            <Search setSearchedGames={setSearchedGames} games={games} />
+            <section id="dashboard">
+                {games.length > 0 && <h1>All listings</h1>}
+                <div className="games">
+                    {isGames &&
+                        searchedGames.length > 0
+                        ?
+                        searchedGames.map(x => (<CatalogItem key={x._id} {...x} />))
+                        : games.map(x => (<CatalogItem key={x._id} {...x} />))}
+                    {!isGames && <EmptyCatalog />}
+                    {/* {searchedGames.length > 0 ? searchedGames.map(x => (<CatalogItem key={x._id} {...x} />)) : games.length > 0 ? games.map(x => (<CatalogItem key={x._id} {...x} />)) : <EmptyCatalog />} */}
+                </div>
+            </section>
+        </>
     )
 }
