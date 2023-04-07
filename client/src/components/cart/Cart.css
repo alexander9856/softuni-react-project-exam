@@ -44,6 +44,7 @@
   text-align: left;
   margin: 0;
   margin-left: 4rem;
+  width: 50%;
 }
 
 .cart-titles {
@@ -78,7 +79,7 @@
   margin-top: 2.5rem;
   cursor: pointer;
   align-self: flex-start;
-  margin-left: 10rem;
+  margin-left: 3rem;
 }
 
 .total {

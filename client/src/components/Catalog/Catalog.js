@@ -18,7 +18,6 @@ export const Catalog = () => {
                 setGames(res)
             })
     }, [])
-    console.log(games)
     return (
         <>
             <Search setSearchedGames={setSearchedGames} games={games} />

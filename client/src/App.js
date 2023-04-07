@@ -25,7 +25,6 @@ function App() {
     <Game>
       <Auth>
         <Header />
-        <Footer />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/catalog' element={<Catalog />} />
@@ -56,6 +55,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
 
         </Routes>
+        <Footer />
+
       </Auth>
     </Game>
 
