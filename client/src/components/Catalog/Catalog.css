@@ -54,19 +54,22 @@
 }
 
 /* Empty catalog */
-.empty-profile{
+.empty-catalog{
     font-size: 24px;
     margin-top: 10rem;
-    margin-left: 11rem
+    margin-left: 2rem
 }
-.empty-profile p{
+.empty-catalog p{
     margin-top: 2rem;
     margin-left: 28rem;
     color: rgb(226, 223, 237);  
 }
-.empty-profile p a{
+.empty-catalog p a{
     color: rgb(80, 9, 222);
-    text-decoration: underline; 
+    text-decoration: none; 
+}
+.empty-catalog p a:hover{
+    color: rgb(40, 118, 202);
 }
 #dashboard h1{
     text-align: center;
@@ -95,7 +98,7 @@
     margin: 0 auto;
   }
   
- #search button[type="submit"] {
+.searchButton {
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -106,3 +109,8 @@
     position: relative;
     right: 30rem;
   }
+
+.searchButton:hover{
+    background-color: #276bff;
+}
+

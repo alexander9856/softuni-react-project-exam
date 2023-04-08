@@ -19,7 +19,7 @@ export const Search = ({ setSearchedGames, games }) => {
     return (
         <form id="search" onSubmit={onSearchHandler}>
             <input type="text" placeholder="Search Game" name="searchGame" />
-            <button type="submit">Search</button>
+            <button type="submit" className="searchButton"><i className="fa-solid fa-magnifying-glass"></i>Search</button>
         </form>
     )
 }

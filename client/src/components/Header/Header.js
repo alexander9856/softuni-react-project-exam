@@ -9,10 +9,10 @@ export const Header = () => {
         <header>
             <h1><Link to="/" className="homeLink">GamerGlance</Link></h1>
             <nav>
-                < Link to="/catalog">All games</Link>
+                < Link to="/catalog"><i class="fa-solid fa-gamepad"></i>All games</Link>
                 {/* ? logged in : guests */}
                 {isAuthenticated ? <div id="user">
-                    <Link to="/create">Sell</Link>
+                    <Link to="/create"><i className="fa-solid fa-circle-plus"></i>Sell</Link>
                     <Link to="/cart"><i className="fa-solid fa-cart-shopping"></i>Shopping cart</Link>
                     <Link to="/profile"><i className="fa-solid fa-user"></i>Profile</Link>
                     <Link to="/logout" id="logoutBtn"><i className="fa-solid fa-right-from-bracket"></i>Logout</Link>
