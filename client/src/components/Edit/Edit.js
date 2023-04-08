@@ -156,7 +156,7 @@ export const Edit = () => {
 
                 </div>
                 <div className="form-group">
-                    <button className="submitGame" type="submit">Edit game</button>
+                    <button className="submitGame" type="submit"><i className="fa-solid fa-pen-to-square"></i>Edit game</button>
                 </div>
             </form>
         </section>
