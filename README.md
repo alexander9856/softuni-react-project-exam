@@ -1,5 +1,8 @@
 # softuni-react-project-exam-GameGlancer
 
+Deployed app link: https://gamerglance-c2f91.web.app/
+
+
 ## Description
 This is a full stack web application, which users use to create an account, login and publish video games for sale.
 Users can add to cart games they like if they are logged in. Owners can read their own creations and have the right to edit and delete them.
@@ -30,7 +33,7 @@ View profile | ![alt](https://img.icons8.com/emoji/60/000000/cross-mark-emoji.pn
 ![html](https://img.icons8.com/color/100/000000/html-5--v1.png)
 ![css](https://img.icons8.com/color/100/000000/css3.png)
 
-## Get Started with
+## Get Started with for local start
 
 - You have to fork and clone this repository.
 - Run npm install in the client folder.
