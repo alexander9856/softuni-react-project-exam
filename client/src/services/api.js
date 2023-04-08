@@ -1,4 +1,4 @@
-const host = "https://softuni-react-project-service.onrender.com/";
+const host = "https://softuni-react-project-exam-service.onrender.com/";
 async function request(method, url, data) {
     let user = JSON.parse(localStorage.getItem('user'));
     let option = {
