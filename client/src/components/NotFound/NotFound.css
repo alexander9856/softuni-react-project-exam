@@ -1,26 +1,30 @@
 @import url('https://use.fontawesome.com/releases/v6.1.1/css/all.css');
 
-#notFound  {
+#notFound {
     display: flex;
     flex-direction: column;
     text-align: center;
 
 }
+
 #notFound img {
     width: 50%;
 }
 
-#notFound p{
-    color: rgb(226, 223, 237);  
+#notFound p {
+    color: rgb(226, 223, 237);
     font-size: 30px;
     font-weight: 500;
 }
-#notFound  a{
+
+#notFound a {
     margin-top: 2rem;
     color: rgb(13, 85, 173);
     /* text-decoration: underline;  */
     font-weight: 500;
     font-size: 24px
-
 }
 
+#notFound a:hover {
+    color: rgb(17, 56, 104);
+}

@@ -69,7 +69,7 @@ export const Details = () => {
                             <Link to={`/games/edit/${gameId}`} className="edit-button">Edit</Link>
                             <button onClick={deleteHandler} className="delete-button" >Delete</button>
                         </>
-                        : isAdded ? <button className='added-to-cart'>Added to cart</button> : < button onClick={(e) => addToShoppingCart(e, game)} className="add-to-cart-button">Add to cart</button>
+                        : isAdded ? <button className='added-to-cart'><i className="fa-solid fa-check"></i>Added to cart</button> : < button onClick={(e) => addToShoppingCart(e, game)} className="add-to-cart-button"><i className="fa-solid fa-cart-plus"></i>Add to cart</button>
                     }
                 </div>}
             </div>

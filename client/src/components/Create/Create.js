@@ -121,7 +121,7 @@ export const Create = () => {
 
                 </div>
                 <div className="form-group">
-                    <button className="submitGame" type="submit">Publish offer</button>
+                    <button className="submitGame" type="submit"><i className="fa-solid fa-circle-plus"></i>Publish offer</button>
                 </div>
             </form>
         </section>

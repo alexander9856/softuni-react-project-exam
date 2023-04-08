@@ -5,7 +5,7 @@ export const EmptyCart = () => {
             <img className="emptyCartImg" src={require('../../assets/empty-cart.png')} alt="prazna kolichka" />
             <div className="instructions">
                 <h2>Your cart is currently empty</h2>
-                <Link to={'/catalog'} className="browse">Return to browse</Link>
+                <Link to={'/catalog'} className="browse"><i className="fa-solid fa-arrow-left"></i>Return to browse</Link>
             </div>
         </section>
     )

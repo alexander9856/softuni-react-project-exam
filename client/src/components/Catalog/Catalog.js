@@ -22,7 +22,7 @@ export const Catalog = () => {
         <>
             <Search setSearchedGames={setSearchedGames} games={games} />
             <section id="dashboard">
-                {games.length > 0 && <h1>All listings</h1>}
+                {games.length > 0 && <h1><i class="fa-solid fa-gamepad"></i>All listings</h1>}
                 <div className="games">
                     {isGames &&
                         searchedGames.length > 0

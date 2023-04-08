@@ -21,7 +21,7 @@ export const CartItem = ({ game }) => {
                 <p>Suitable for : {capitalize(game['game-suitable'])}</p>
                 <p className="price">Price: ${game['game-price']}</p>
             </div>
-            <button onClick={removeFromCartHandler} className="remove-item">Remove</button>
+            <button onClick={removeFromCartHandler} className="remove-item"><i className="fa-solid fa-trash"></i>Remove</button>
         </div>
     )
 }
