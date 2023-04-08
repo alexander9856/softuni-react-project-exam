@@ -2,19 +2,11 @@ import './Register.css'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-// import { useForm } from '../../../hooks/useForm'
 
 import { AuthContext } from '../../../contexts/AuthContext'
 export const Register = () => {
     const { onRegisterSubmit } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors }, getValues } = useForm()
-
-    // const { values, changeHandler, onSubmit } = useForm({
-    //     username: "",
-    //     email: '',
-    //     password: '',
-    //    'confirm-password': '',
-    // }, onRegisterSubmit);
     return (
         <section className="register">
             <form onSubmit={handleSubmit(onRegisterSubmit)}>
@@ -43,9 +35,9 @@ export const Register = () => {
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Email is required"
+                    placeholder="Enter your email"
                     {...register("email", {
-                        required: "Please enter an email",
+                        required: "Email is required",
                         pattern: {
                             value: /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/,
                             message: "Invalid email",
