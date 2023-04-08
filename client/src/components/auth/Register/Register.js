@@ -47,7 +47,7 @@ export const Register = () => {
                     {...register("email", {
                         required: "Please enter an email",
                         pattern: {
-                            value: /^[a-zA-z0-9]+@[[a-zA-z]+\.[a-zA-z]+$/,
+                            value: /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/,
                             message: "Invalid email",
                         },
                     })}
