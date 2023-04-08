@@ -34,6 +34,9 @@ export const Details = () => {
             if (s == 'pc') {
                 return s.toUpperCase()
             }
+            if(s == 'all'){
+                return 'All platforms'
+            }
             return s[0].toUpperCase() + s.slice(1);
         }
 

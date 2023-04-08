@@ -14,7 +14,7 @@ export const Edit = () => {
             "game-title": "",
             "game-type": "",
             "game-imageUrl": "",
-            "game-suitable": "",
+            "platform": "",
             "game-price": "",
             "game-description": ""
         }
@@ -31,7 +31,7 @@ export const Edit = () => {
                 setValue('game-title', res['game-title'])
                 setValue('game-type', res['game-type'])
                 setValue('game-imageUrl', res['game-imageUrl'])
-                setValue('game-suitable', res['game-suitable'])
+                setValue('platform', res['platform'])
                 setValue('game-price', res['game-price'])
                 setValue('game-description', res['game-description'])
 
@@ -111,13 +111,13 @@ export const Edit = () => {
                     
 
 
-                    <label htmlFor="game-suitable">Suitable for:</label>
-                    <select id="game-suitable" name="game-suitable" {...register("game-suitable", {})} >
+                    <label htmlFor="platform">Suitable for:</label>
+                    <select id="platform" name="platform" {...register("platform", {})} >
                         <option value="pc">PC</option>
                         <option value="xbox">Xbox</option>
                         <option value="playstation">PlayStation</option>
                         <option value="mobile">Mobile</option>
-                        <option value="all">All of the above</option>
+                        <option value="all">All platforms</option>
                     </select>
 
                     <label htmlFor="game-price">Price:</label>
