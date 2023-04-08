@@ -2,7 +2,7 @@
 
 ## Description
 This is a full stack web application, which users use to create an account, login and publish video games for sale.
-Users can add to cart games they like if they are logged in. Owners can read their own creations in order to edit and delete them.
+Users can add to cart games they like if they are logged in. Owners can read their own creations and have the right to edit and delete them.
 
 
 - For Routes the app uses react-router-dom.
