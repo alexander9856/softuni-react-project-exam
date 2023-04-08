@@ -6,6 +6,7 @@ Users can add to cart games they like if they are logged in. Owners can read the
 
 
 - For Routes the app uses react-router-dom.
+- Some Routes are wrapped in Routeguard.
 - React hook form is used for the validation. 
 
 # Functionalities :
