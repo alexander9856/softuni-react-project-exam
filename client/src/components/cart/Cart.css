@@ -1,3 +1,5 @@
+@import url('https://use.fontawesome.com/releases/v6.1.1/css/all.css');
+
 #shoppingCart {
   width: 45%;
   margin-top: 3rem;
@@ -6,6 +8,7 @@
 #shoppingCart h1 {
   text-align: center;
   margin-bottom: 2rem;
+  color: #fff;
 }
 
 .cart {
