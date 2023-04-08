@@ -69,8 +69,8 @@ export const Details = () => {
                 {isAuthenticated && < div className="button-container">
                     {game._ownerId === userId ?
                         <>
-                            <Link to={`/games/edit/${gameId}`} className="edit-button">Edit</Link>
-                            <button onClick={deleteHandler} className="delete-button" >Delete</button>
+                            <Link to={`/games/edit/${gameId}`} className="edit-button"><i className="fa-solid fa-pen-to-square"></i>Edit</Link>
+                            <button onClick={deleteHandler} className="delete-button" ><i className="fa-solid fa-trash"></i>Delete</button>
                         </>
                         : isAdded ? <button className='added-to-cart'><i className="fa-solid fa-check"></i>Added to cart</button> : < button onClick={(e) => addToShoppingCart(e, game)} className="add-to-cart-button"><i className="fa-solid fa-cart-plus"></i>Add to cart</button>
                     }
