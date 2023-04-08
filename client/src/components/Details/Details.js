@@ -60,7 +60,7 @@ export const Details = () => {
             <div className="game-properties">
                 <h2 className="game-title">{capitalize(game['game-title'])}</h2>
                 <p className="game-type">Type of game: {capitalize(game['game-type'])}</p>
-                <p className="game-suitable">Suitable for: {capitalize(game['game-suitable'])}</p>
+                <p className="game-suitable">Suitable for: {capitalize(game['platform'])}</p>
                 <p className="game-price">Price: {game['game-price']}$</p>
                 <p className="game-description">Description: {game['game-description']}</p>
                 {isAuthenticated && < div className="button-container">

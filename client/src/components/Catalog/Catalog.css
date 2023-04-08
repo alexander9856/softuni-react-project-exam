@@ -60,24 +60,28 @@
 }
 
 /* Empty catalog */
-.empty-catalog{
+.empty-catalog {
     font-size: 24px;
     margin-top: 10rem;
     margin-left: 2rem
 }
-.empty-catalog p{
+
+.empty-catalog p {
     margin-top: 2rem;
     margin-left: 28rem;
-    color: rgb(226, 223, 237);  
+    color: rgb(226, 223, 237);
 }
-.empty-catalog p a{
+
+.empty-catalog p a {
     color: rgb(80, 9, 222);
-    text-decoration: none; 
+    text-decoration: none;
 }
-.empty-catalog p a:hover{
+
+.empty-catalog p a:hover {
     color: rgb(40, 118, 202);
 }
-#dashboard h1{
+
+#dashboard h1 {
     text-align: center;
     font-size: 30px;
     color: white;
@@ -92,20 +96,26 @@
     justify-content: center;
     align-items: center;
     margin-top: 2rem
-  }
-  
- #search input[type="text"] {
+}
+
+#search input[type="text"],
+select {
     padding: 10px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
     width: 30%;
     margin-right: 10px;
-    margin: 0 auto;
-  }
-  
+    margin: 0;
+}
+
+#search select {
+    width: 11%;
+    margin-left: 1rem;
+}
+
 .searchButton {
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
@@ -113,10 +123,17 @@
     color: white;
     cursor: pointer;
     position: relative;
-    right: 29.5rem;
-  }
+    left: 1rem;
+}
 
-.searchButton:hover{
+.searchButton:hover {
     background-color: #2a5bc3;
 }
 
+/* empty-search */
+
+.empty-search {
+    font-size: 24px;
+    margin-top: 10rem;
+    margin-left: 2rem
+}

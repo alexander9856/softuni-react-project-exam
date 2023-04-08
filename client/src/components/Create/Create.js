@@ -11,7 +11,7 @@ export const Create = () => {
             "game-title": "",
             "game-type": "",
             "game-imageUrl": "",
-            "game-suitable": "playstation",
+            "platform": "playstation",
             "game-price": "",
             "game-description": ""
         }
@@ -78,14 +78,15 @@ export const Create = () => {
                     />
                     <p className='wrongInputCreate'>{errors['game-imageUrl']?.message}</p>
 
-                    <label htmlFor="game-suitable">Suitable for:</label>
+                    <label htmlFor="platform">Suitable for:</label>
 
-                    <select id="game-suitable" name="game-suitable" {...register("game-suitable", {})}>
+                    <select id="platform" name="platform" {...register("platform", {})}>
                         <option value="pc">PC</option>
                         <option value="xbox">Xbox</option>
                         <option value="playstation">PlayStation</option>
                         <option value="mobile">Mobile</option>
-                        <option value="all">All of the above</option>
+                        <option value="nintendo">Nintendo</option>
+                        <option value="all-platforms">All platforms</option>
                     </select>
 
                     <label htmlFor="game-price">Price:</label>
