@@ -45,7 +45,9 @@
 
 .login form p a {
     font-weight: bolder;
-
+}
+.login form p a:hover{
+    color: rgb(133, 120, 120);
 }
 
 input[type="email"],
