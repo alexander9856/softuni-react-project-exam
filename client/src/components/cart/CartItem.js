@@ -18,7 +18,7 @@ export const CartItem = ({ game }) => {
             <img className='cartItemImg' src={game['game-imageUrl']} alt="Game 1" />
             <div className="game-details">
                 <h2>{game['game-title']}</h2>
-                <p>Suitable for : {capitalize(game['game-suitable'])}</p>
+                <p>Suitable for : {capitalize(game['platform'])}</p>
                 <p className="price">Price: ${game['game-price']}</p>
             </div>
             <button onClick={removeFromCartHandler} className="remove-item"><i className="fa-solid fa-trash"></i>Remove</button>
