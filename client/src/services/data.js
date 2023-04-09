@@ -50,10 +50,6 @@ export async function delGame(id) {
 }
 
 
-export async function buy(gameId) {
-    let res = await api.post('data/donation', gameId)
-    return res
-}
 
 
 
