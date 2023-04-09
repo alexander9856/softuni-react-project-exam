@@ -116,6 +116,7 @@ export const Edit = () => {
                         <option value="pc">PC</option>
                         <option value="xbox">Xbox</option>
                         <option value="playstation">PlayStation</option>
+                        <option value="nintendo">Nintendo</option>
                         <option value="mobile">Mobile</option>
                         <option value="all">All platforms</option>
                     </select>
