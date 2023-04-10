@@ -28,6 +28,7 @@ export const Catalog = () => {
                 <div className="games">
                     {(isSearched && searchedGames.length > 0) && searchedGames.map(x => (<CatalogItem key={x._id} {...x} />))}
                     {(isSearched && searchedGames.length == 0) && <NoMatches />}
+                    
 
                     {(!isSearched && games.length > 0) && games.map(x => (<CatalogItem key={x._id} {...x} />))}
                     {games.length == 0 && <EmptyCatalog />}
