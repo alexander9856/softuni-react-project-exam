@@ -1366,7 +1366,47 @@
 
         },
         gamesForSale: {
-
+            "227c2b09-a1ad-4940-be81-af0dbd5e3663": {
+                "game-title": "Super Mario Delux",
+                "game-type": "platformer",
+                "game-imageUrl": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91SzXbxJpML._AC_UF1000,1000_QL80_.jpg",
+                "platform": "nintendo",
+                "game-price": "25",
+                "game-description": "Best nintendo game",
+                "_createdOn": 1681145517843,
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_updatedOn": 1681145539589,
+            },
+            "f1a9f622-ee88-4fe2-b283-37581300db57":{
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "game-title": "UFC 4",
+                "game-type": "Fighting",
+                "game-imageUrl": "https://cdn.ozone.bg/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/u/f/5d09d00bfb79e13211e55a442204ff3a/ufc-4-ps4-31.jpg",
+                "platform": "playstation",
+                "game-price": "24",
+                "game-description": "Best fighting game",
+                "_createdOn": 1681145535682,
+            },
+            "17eef53b-5b11-474b-be9c-7b481331fe47":{
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "game-title": "Mortal Kombat X",
+                "game-type": "Fighting",
+                "game-imageUrl": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51iHmEg6LFL.jpg",
+                "platform": "xbox",
+                "game-price": "44",
+                "game-description": "Sub zero is the best",
+                "_createdOn": 1681147102645,
+            },
+            "994e8a95-d6d8-4ecd-a9a7-a1b26296bf82":{
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "game-title": "GTA 5",
+                "game-type": "action-adventure",
+                "game-imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png",
+                "platform": "playstation",
+                "game-price": "50",
+                "game-description": "Very nice game bro",
+                "_createdOn": 1681147128275,
+            }
         }   
     };
     var rules$1 = {
